@@ -5,9 +5,11 @@ var hbs=require('hbs')
 const {forecast} = require('../utils/forecast')
 const {geocode} = require('../utils/geocode')
 
+
 //const cookie=require('cookie-parser')
 
 const app = express()
+const port = process.env.PORT||3000
 
 // app.use(cookie())
 //
@@ -126,6 +128,6 @@ app.get('*',(req,res)=>{
 //app.com/help
 //app.com/about
 
-app.listen(3000,()=>{
-  console.log('Server is up on port 3000.')
+app.listen(port,()=>{
+  console.log('Server is up on port %s.',port)
 })
